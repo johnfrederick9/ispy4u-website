@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iSPY4U Process Servers</title>
+<meta name="description" content="iSPY4U Process Servers — court-approved process service, private investigation, skip tracing, document retrieval, mobile notary, courier and surveillance in Fayetteville, GA and statewide across Georgia. Call (404) 901-0700.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:wght@400;500;700;800&family=Courier+Prime:wght@400;700&display=swap">
+<style>
+  :root{
+    --navy:#191878;
+    --navy-deep:#0c0c3a;
+    --navy-mid:#232290;
+    --ink:#14144e;
+    --body:#3a3a5e;
+    --gold:#c49539;
+    --gold-bright:#e6c87e;
+    --gold-deep:#9a742a;
+    --paper:#fcfbf8;
+    --paper-card:#ffffff;
+    --line:#e2ddcf;
+    --line-navy:rgba(25,24,120,.16);
+    --serif:'Marcellus', 'Times New Roman', serif;
+    --sans:'Public Sans', 'Segoe UI', Arial, sans-serif;
+    --type:'Courier Prime', 'Courier New', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    font-size:1.0625rem;
+    line-height:1.65;
+    color:var(--body);
+    background:var(--paper);
+  }
+  img{max-width:100%;display:block}
+  a{color:var(--navy)}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--ink);text-wrap:balance;line-height:1.15}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* ---------- header ---------- */
+  .topbar{
+    background:linear-gradient(180deg, #faf5e9, #f5eedb);
+    color:var(--body);
+    border-bottom:1px solid var(--line);
+    font-size:.85rem;
+    letter-spacing:.04em;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:7px;padding-bottom:7px}
+  .topbar a{color:var(--navy);font-weight:700;text-decoration:none}
+  .topbar a:hover{text-decoration:underline}
+  .topbar .area{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(248,246,241,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{display:flex;align-items:center;gap:28px;padding-top:12px;padding-bottom:12px}
+  .brand img{height:52px;width:auto}
+  nav.main{margin-left:auto;display:flex;align-items:center;gap:26px}
+  nav.main a{
+    text-decoration:none;color:var(--ink);
+    font-weight:500;font-size:.98rem;letter-spacing:.02em;
+    border-bottom:2px solid transparent;padding:4px 0;
+  }
+  nav.main a:hover{border-bottom-color:var(--gold)}
+  .btn{
+    display:inline-block;text-decoration:none;
+    font-weight:700;letter-spacing:.04em;
+    padding:13px 26px;border-radius:3px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-gold{
+    background:linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, var(--gold-deep));
+    color:#241a05;box-shadow:0 2px 10px rgba(154,116,42,.35);
+  }
+  .btn-ghost{
+    border:1px solid rgba(230,200,126,.55);color:var(--gold-bright);
+  }
+  nav.main .btn{padding:10px 20px;font-size:.95rem}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(1100px 520px at 78% -10%, rgba(230,200,126,.28), transparent 60%),
+      radial-gradient(900px 700px at -10% 110%, rgba(25,24,120,.06), transparent 55%),
+      #fff;
+    color:var(--body);
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  /* spyglass lens rings */
+  .hero::before, .hero::after{
+    content:"";position:absolute;border-radius:50%;
+    border:1px solid rgba(196,149,57,.4);
+    pointer-events:none;
+  }
+  .hero::before{width:640px;height:640px;right:-140px;top:-180px}
+  .hero::after{width:840px;height:840px;right:-240px;top:-280px;border-color:rgba(196,149,57,.2)}
+  .hero .wrap{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;
+    padding-top:84px;padding-bottom:96px;position:relative;z-index:1;
+  }
+  .eyebrow{
+    font-family:var(--type);
+    font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold-bright);
+  }
+  .hero .eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold-deep)}
+  .hero .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.7rem);
+    color:var(--navy);
+    margin:18px 0 8px;
+  }
+  .hero h1 .gold{
+    background:linear-gradient(100deg, #9a742a, #c49539 45%, #a97c28 70%, #d7ac50);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .tag{
+    font-family:var(--serif);
+    font-size:1.15rem;letter-spacing:.06em;
+    color:var(--gold-deep);
+    margin-bottom:18px;
+  }
+  .hero p.lead{max-width:34rem;font-size:1.13rem;color:var(--body);margin-bottom:32px}
+  .hero .cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .hero .cta .phone{
+    font-family:var(--serif);font-size:1.35rem;color:var(--ink);text-decoration:none;
+    display:flex;align-items:center;gap:10px;
+  }
+  .hero .cta .phone:hover{color:var(--gold-deep)}
+  .hero .cta .phone svg{flex:none}
+
+  /* affidavit card */
+  .affidavit{
+    background:var(--paper-card);
+    color:#2c2c2c;
+    border:1px solid #e7e2d2;
+    border-radius:4px;
+    box-shadow:0 24px 60px rgba(25,24,120,.16), 0 4px 14px rgba(25,24,120,.10);
+    padding:30px 30px 26px;
+    font-family:var(--type);
+    font-size:.82rem;line-height:1.75;
+    transform:rotate(1.4deg);
+    position:relative;
+    max-width:400px;justify-self:end;width:100%;
+  }
+  .affidavit .clip{
+    position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    width:88px;height:22px;border-radius:12px;
+    background:linear-gradient(160deg, #e6c87e, #c49539 60%, #9a742a);
+    box-shadow:0 2px 6px rgba(0,0,0,.35);
+  }
+  .affidavit h3{
+    font-family:var(--type);font-weight:700;font-size:.9rem;
+    letter-spacing:.1em;text-align:center;color:#1c1c1c;
+    text-transform:uppercase;margin-bottom:4px;
+  }
+  .affidavit .court{
+    text-align:center;font-size:.72rem;letter-spacing:.08em;
+    text-transform:uppercase;color:#6c6c6c;
+    border-bottom:1px solid #d9d3c0;padding-bottom:12px;margin-bottom:14px;
+  }
+  .affidavit dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px}
+  .affidavit dt{color:#8a8570;text-transform:uppercase;font-size:.72rem;letter-spacing:.06em;padding-top:2px}
+  .affidavit dd{border-bottom:1px dotted #cfc8b2;font-weight:700;color:#232323}
+  .affidavit .foot{
+    margin-top:16px;padding-top:12px;border-top:1px solid #d9d3c0;
+    display:flex;justify-content:space-between;align-items:flex-end;
+    font-size:.72rem;color:#6c6c6c;
+  }
+  .affidavit .sig{font-family:var(--serif);font-size:1.05rem;color:var(--navy)}
+  .stamp{
+    position:absolute;right:18px;bottom:64px;
+    font-family:var(--type);font-weight:700;
+    font-size:1.5rem;letter-spacing:.22em;
+    color:#a1122d;
+    border:3px double #a1122d;
+    border-radius:6px;
+    padding:4px 14px 2px;
+    transform:rotate(-12deg);
+    opacity:.85;
+    mix-blend-mode:multiply;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .stamp{animation:stampdown .45s cubic-bezier(.2,1.6,.4,1) .8s backwards}
+    @keyframes stampdown{
+      from{transform:rotate(-12deg) scale(2.4);opacity:0}
+      to{transform:rotate(-12deg) scale(1);opacity:.85}
+    }
+  }
+
+  /* ---------- trust bar ---------- */
+  .trust{background:#fff;border-bottom:1px solid var(--line);color:var(--ink)}
+  .trust .wrap{
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 32px;
+    padding-top:18px;padding-bottom:18px;
+  }
+  .trust span{display:flex;align-items:center;gap:10px;font-size:.95rem;letter-spacing:.03em}
+  .trust svg{flex:none;color:var(--gold-deep)}
+
+  /* ---------- sections ---------- */
+  section{padding:88px 0}
+  .sec-head{max-width:46rem;margin-bottom:52px}
+  .sec-head .eyebrow{color:var(--gold-deep)}
+  .sec-head h2{font-size:clamp(1.8rem, 3.4vw, 2.5rem);margin:12px 0 14px}
+  .sec-head p{font-size:1.1rem}
+
+  /* services */
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .svc{
+    background:var(--paper-card);padding:28px 24px;
+    transition:background .2s ease;
+  }
+  .svc:hover{background:#fff}
+  .svc .ic{
+    width:46px;height:46px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(160deg, rgba(230,200,126,.35), rgba(196,149,57,.18));
+    border:1px solid rgba(196,149,57,.4);
+    color:var(--navy);margin-bottom:16px;
+  }
+  .svc h3{font-size:1.22rem;margin-bottom:8px}
+  .svc p{font-size:.97rem}
+  .svc.more{
+    background:linear-gradient(180deg, #faf5e9, #f5eedb);
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .svc.more:hover{background:#fbf7ee}
+  .svc.more h3{color:var(--navy)}
+  .svc.more p{color:var(--body)}
+  .svc.more a{color:var(--navy);font-weight:700;text-decoration:none;font-size:1.05rem}
+  .svc.more a:hover{color:var(--gold-deep)}
+  .svc.flag{position:relative}
+  .svc.flag::after{
+    content:"CORE SERVICE";
+    position:absolute;top:14px;right:14px;
+    font-family:var(--type);font-size:.62rem;letter-spacing:.12em;
+    color:var(--gold-deep);border:1px solid rgba(196,149,57,.5);
+    padding:2px 7px;border-radius:2px;
+  }
+
+  /* CTA band */
+  .band{
+    background:linear-gradient(180deg, #faf5e9, #f5eedb);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    text-align:center;padding:72px 0;
+  }
+  .band h2{color:var(--navy);font-size:clamp(1.7rem, 3.2vw, 2.3rem);margin-bottom:12px}
+  .band p{color:var(--body);max-width:38rem;margin:0 auto 28px}
+  .band-cta{display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap}
+  .band-cta a:not(.btn){
+    color:var(--navy);text-decoration:none;
+    font-family:var(--serif);font-size:1.15rem;
+  }
+  .band-cta a:not(.btn):hover{text-decoration:underline}
+
+  /* coverage */
+  .coverage .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+  .counties{display:flex;flex-wrap:wrap;gap:10px}
+  .counties li{
+    list-style:none;
+    font-size:.93rem;font-weight:500;letter-spacing:.02em;
+    color:var(--ink);
+    background:var(--paper-card);
+    border:1px solid var(--line-navy);
+    border-radius:3px;padding:7px 14px;
+  }
+  .counties li.rest{
+    background:var(--navy);color:var(--gold-bright);border-color:var(--navy);
+    font-family:var(--type);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  }
+
+  /* about */
+  .about{background:var(--paper-card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
+  .about .fact{
+    display:flex;gap:16px;align-items:flex-start;
+    border-top:2px solid var(--gold);padding-top:22px;
+  }
+  .about .fact svg{flex:none;color:var(--gold-deep);margin-top:4px}
+  .about .fact h3{font-size:1.1rem;margin-bottom:3px}
+  .about .fact p{font-size:.97rem}
+
+  /* contact */
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .c-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:26px}
+  .c-item svg{flex:none;color:var(--gold-deep);margin-top:5px}
+  .c-item .lbl{
+    font-family:var(--type);font-size:.72rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--gold-deep);
+  }
+  .c-item a{color:var(--ink);text-decoration:none;font-weight:700;font-size:1.15rem}
+  .c-item a:hover{color:var(--navy);text-decoration:underline}
+  .c-item p{font-size:1.02rem;color:var(--body)}
+  .map{
+    margin-top:22px;
+    border:1px solid var(--line);border-radius:4px;overflow:hidden;
+    box-shadow:0 6px 18px rgba(25,24,120,.08);
+  }
+  .map iframe{display:block;width:100%;height:240px;border:0;filter:saturate(.75)}
+
+  form.request{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    padding:36px;border-radius:4px;
+    display:grid;gap:16px;
+    box-shadow:0 18px 44px rgba(25,24,120,.10);
+  }
+  form.request h3{color:var(--navy);font-size:1.45rem}
+  form.request p.note{color:var(--body);font-size:.93rem;margin-top:-6px}
+  .field{display:grid;gap:6px}
+  .field label{
+    font-family:var(--type);font-size:.72rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--gold-deep);
+  }
+  .field input,.field select,.field textarea{
+    font-family:var(--sans);font-size:1rem;color:var(--ink);
+    background:var(--paper);
+    border:1px solid var(--line);border-radius:3px;
+    padding:11px 13px;width:100%;
+  }
+  .field textarea{resize:vertical;min-height:96px}
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:2px solid var(--gold);outline-offset:1px;
+  }
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  form.request .btn{border:none;cursor:pointer;font-family:var(--sans);font-size:1.02rem;justify-self:start}
+
+  /* footer */
+  footer.site{background:#fff;border-top:1px solid var(--line);color:var(--body);font-size:.92rem}
+  footer.site .wrap{
+    padding-top:52px;padding-bottom:28px;
+    display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:44px;
+  }
+  footer.site img{height:64px;width:auto;margin-bottom:16px}
+  footer.site h4{
+    font-family:var(--type);font-size:.75rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px;
+  }
+  footer.site ul{list-style:none;display:grid;gap:8px}
+  footer.site a{color:var(--ink);text-decoration:none}
+  footer.site a:hover{color:var(--gold-deep)}
+  .legal{
+    border-top:1px solid var(--line);
+    padding:18px 24px;text-align:center;font-size:.82rem;color:#7d86ab;
+  }
+  .legal .wrap{padding-top:0;padding-bottom:0}
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 940px){
+    .hero .wrap{grid-template-columns:1fr;padding-top:60px;padding-bottom:70px}
+    .affidavit{justify-self:center;transform:rotate(0deg)}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .coverage .wrap,.contact .wrap{grid-template-columns:1fr;gap:44px}
+    .about .facts{grid-template-columns:1fr;gap:28px}
+    footer.site .wrap{grid-template-columns:1fr;gap:32px}
+    nav.main a:not(.btn){display:none}
+    .topbar .area{display:none}
+    .topbar .wrap{justify-content:center}
+  }
+  @media (max-width: 600px){
+    .svc-grid{grid-template-columns:1fr}
+    .two{grid-template-columns:1fr}
+    section{padding:64px 0}
+    .brand img{height:44px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="area">Fayetteville, GA &middot; Serving Metro Atlanta &amp; All of Georgia</span>
+    <span>Call or text: <a href="tel:+14049010700">(404) 901-0700</a></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="iSPY4U Process Servers — home">
+      <img src="assets/logo.png" alt="iSPY4U Process Servers" width="686" height="232">
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#about">About</a>
+      <a class="btn btn-gold" href="#contact">Request Service</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="padding:0">
+    <div class="wrap">
+      <div>
+        <h1>We find them.<br>We serve them.<br><span class="gold">You get proof.</span></h1>
+        <p class="tag">The Epitome of Precision &amp; Professionalism</p>
+        <p class="lead">iSPY4U serves legal documents across Metro Atlanta and the State of Georgia — fast, by the book, and backed by a notarized affidavit of service you can file with confidence.</p>
+        <div class="cta">
+          <a class="btn btn-gold" href="#contact">Request Service</a>
+          <a class="phone" href="tel:+14049010700">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+            (404) 901-0700
+          </a>
+        </div>
+      </div>
+
+      <div class="affidavit" role="img" aria-label="Illustration of a completed affidavit of service stamped SERVED">
+        <div class="clip"></div>
+        <h3>Affidavit of Service</h3>
+        <p class="court">In the Superior Court &mdash; State of Georgia</p>
+        <dl>
+          <dt>Documents</dt><dd>Summons &amp; Complaint</dd>
+          <dt>Attempted</dt><dd>1 &mdash; First attempt</dd>
+          <dt>Served</dt><dd>Personally, at residence</dd>
+          <dt>Date / Time</dt><dd>08/28/2026 &middot; 7:42 AM</dd>
+        </dl>
+        <div class="foot">
+          <span>Sworn &amp; notarized</span>
+          <span class="sig">V.&nbsp;Thompson</span>
+        </div>
+        <span class="stamp">SERVED</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust" role="list" aria-label="Credentials">
+    <div class="wrap">
+      <span role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        Court-approved permanent process server
+      </span>
+      <span role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 22l5-3 5 3-1.5-9.5"/></svg>
+        NAPPS member since 2019
+      </span>
+      <span role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Statewide Georgia coverage
+      </span>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">In the matter of: what we do</p>
+        <h2>Every service, handled like evidence</h2>
+        <p>From the first attempt to the final affidavit, every job is documented, time-stamped, and returned ready to file. One office, seven ways to move your case forward.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc flag">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
+          <h3>Process Service</h3>
+          <p>Summons, complaints, subpoenas, evictions, garnishments and citations — served personally, promptly, and in full compliance with Georgia law.</p>
+        </div>
+        <div class="svc">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg></div>
+          <h3>Private Investigation</h3>
+          <p>Discreet investigative work supporting attorneys, businesses, and individuals — backgrounds, due diligence, and case support.</p>
+        </div>
+        <div class="svc">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <h3>Document Retrieval</h3>
+          <p>Court records, filings, and documents pulled from clerks' offices across Georgia and delivered to your inbox or your door.</p>
+        </div>
+        <div class="svc">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V7z"/><path d="M12 8v5"/><circle cx="12" cy="15.5" r=".5"/></svg></div>
+          <h3>Mobile Notary</h3>
+          <p>Commissioned notary services that come to you — closings, affidavits, and sworn statements, wherever you need them signed.</p>
+        </div>
+        <div class="svc flag">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.5 15.5L21 21"/><circle cx="10.5" cy="10.5" r="2.5"/></svg></div>
+          <h3>SkipTrace</h3>
+          <p>Evasive or missing? We locate hard-to-find individuals using investigative databases and old-fashioned fieldwork — then complete the serve.</p>
+        </div>
+        <div class="svc">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div>
+          <h3>Courier</h3>
+          <p>Same-day document runs between your office, the courthouse, and opposing counsel — so deadlines never depend on the mail.</p>
+        </div>
+        <div class="svc">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Surveillance</h3>
+          <p>Discreet, professional surveillance with detailed reporting — because sometimes the facts have to be seen to be proven.</p>
+        </div>
+        <div class="svc more">
+          <h3>Something else?</h3>
+          <p>If it touches a courthouse, we can probably help. Tell us what you need.</p>
+          <a href="tel:+14049010700">(404) 901-0700</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Have documents that need serving?</h2>
+      <p>Send them over with the case details — they're served lawfully, and a sworn affidavit of service comes back to you, ready to file.</p>
+      <div class="band-cta">
+        <a class="btn btn-gold" href="tel:+14049010700">Call (404) 901-0700</a>
+        <a href="mailto:orders@ispy4u.us">orders@ispy4u.us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="coverage" id="coverage">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:0">
+        <p class="eyebrow">Jurisdiction: State of Georgia</p>
+        <h2>Metro Atlanta daily. Georgia, statewide.</h2>
+        <p>Based in Fayetteville, we run routes through the metro counties every week and take assignments anywhere in the state. If your serve is in Georgia, we can get it done.</p>
+      </div>
+      <ul class="counties">
+        <li>Bell</li>
+        <li>Carroll</li>
+        <li>Cherokee</li>
+        <li>Clayton</li>
+        <li>Cobb</li>
+        <li>Coweta</li>
+        <li>Dawson</li>
+        <li>DeKalb</li>
+        <li>Douglas</li>
+        <li>Fayette</li>
+        <li>Forsyth</li>
+        <li>Fulton</li>
+        <li>Gwinnett</li>
+        <li>Hall</li>
+        <li>Henry</li>
+        <li>Houston</li>
+        <li>Paulding</li>
+        <li>Pike</li>
+        <li>Spalding</li>
+        <li>Upson</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">On the record: about iSPY4U</p>
+        <h2>iSPY4U Process Servers</h2>
+        <p>A Fayetteville, Georgia legal support company owned and operated by Vanessa Thompson, serving attorneys, businesses, and individuals across the state.</p>
+      </div>
+      <div class="facts">
+        <div class="fact">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div>
+            <h3>Court-approved &amp; on the rosters</h3>
+            <p>A permanent, court-approved process server, including with the Georgia State-wide Business Court.</p>
+          </div>
+        </div>
+        <div class="fact">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 22l5-3 5 3-1.5-9.5"/></svg>
+          <div>
+            <h3>NAPPS member since 2019</h3>
+            <p>A member of the National Association of Professional Process Servers since 2019, and listed on the National Process Server Network.</p>
+          </div>
+        </div>
+        <div class="fact">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <div>
+            <h3>One call, a straight answer</h3>
+            <p>You talk to the person doing the work. Status updates when you want them, honest timelines always.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <div class="sec-head" style="margin-bottom:36px">
+          <p class="eyebrow">Exhibit A: how to reach us</p>
+          <h2>Ready when your case is</h2>
+          <p>Call, text, or email — or send the details through the form and we'll get back to you promptly with a quote and timeline.</p>
+        </div>
+        <div class="c-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+          <div>
+            <span class="lbl">Phone / Text</span><br>
+            <a href="tel:+14049010700">(404) 901-0700</a>
+          </div>
+        </div>
+        <div class="c-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
+          <div>
+            <span class="lbl">Email</span><br>
+            <a href="mailto:info@ispy4u.us">info@ispy4u.us</a>
+          </div>
+        </div>
+        <div class="c-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <span class="lbl">Office</span><br>
+            <p style="font-weight:700;color:var(--ink)">1415 Highway 85 N, Bldg. 310, Ste. 216<br>Fayetteville, GA 30214</p>
+          </div>
+        </div>
+        <div class="c-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <div>
+            <span class="lbl">Facebook</span><br>
+            <a href="https://www.facebook.com/ISpy4U.US" rel="noopener">ISpy4U Process Servers</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+      <form class="request" action="mailto:orders@ispy4u.us" method="get" onsubmit="return sendRequest(this)">
+        <h3>Request Service</h3>
+        <p class="note">This opens a pre-filled email in your mail app — nothing is sent until you hit send. Service fees are payable in advance.</p>
+        <div class="two">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-details">How can we help?</label>
+          <textarea id="f-details" name="details" placeholder="Tell us what you need served, retrieved, or notarized..."></textarea>
+        </div>
+        <button class="btn btn-gold" type="submit">Open Email &amp; Send Request</button>
+      </form>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps?q=1415+Highway+85+N+Bldg+310+Fayetteville+GA+30214&output=embed"
+          title="Map to the iSPY4U office — 1415 Highway 85 N, Fayetteville, GA"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <img src="assets/logo-transparent.png" alt="iSPY4U Process Servers" width="686" height="232">
+      <p>Court-approved process serving, investigation, and legal support services for attorneys, businesses, and individuals across Georgia.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Process Service</a></li>
+        <li><a href="#services">Private Investigation</a></li>
+        <li><a href="#services">SkipTrace &amp; Document Retrieval</a></li>
+        <li><a href="#services">Mobile Notary, Courier &amp; Surveillance</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+14049010700">(404) 901-0700</a></li>
+        <li><a href="mailto:info@ispy4u.us">info@ispy4u.us</a></li>
+        <li>1415 Highway 85 N, Bldg. 310, Ste. 216<br>Fayetteville, GA 30214</li>
+      </ul>
+    </div>
+  </div>
+  <div class="legal">
+    <div class="wrap">&copy; 2026 iSPY4U Process Servers &middot; Fayetteville, Georgia</div>
+  </div>
+</footer>
+
+<script>
+function sendRequest(f){
+  var body =
+    "Name: " + f.name.value + "\n" +
+    "Phone: " + f.phone.value + "\n\n" +
+    f.details.value;
+  var url = "mailto:orders@ispy4u.us"
+    + "?subject=" + encodeURIComponent("Service request from " + f.name.value)
+    + "&body=" + encodeURIComponent(body);
+  window.location.href = url;
+  return false;
+}
+</script>
+
+</body>
+</html>
