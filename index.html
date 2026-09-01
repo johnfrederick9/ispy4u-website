@@ -178,7 +178,7 @@
     display:flex;justify-content:space-between;align-items:flex-end;
     font-size:.72rem;color:#6c6c6c;
   }
-  .affidavit .sig{font-family:var(--serif);font-size:1.05rem;color:var(--navy)}
+  .affidavit .sig{font-family:var(--serif);font-size:.92rem;color:var(--navy)}
   .stamp{
     position:absolute;right:18px;bottom:64px;
     font-family:var(--type);font-weight:700;
@@ -429,7 +429,7 @@
         </dl>
         <div class="foot">
           <span>Sworn &amp; notarized</span>
-          <span class="sig">V.&nbsp;Thompson</span>
+          <span class="sig">iSPY4U Process Servers</span>
         </div>
         <span class="stamp">SERVED</span>
       </div>
@@ -511,7 +511,7 @@
       <p>Send them over with the case details — they're served lawfully, and a sworn affidavit of service comes back to you, ready to file.</p>
       <div class="band-cta">
         <a class="btn btn-gold" href="tel:+14049010700">Call (404) 901-0700</a>
-        <a href="mailto:orders@ispy4u.us">orders@ispy4u.us</a>
+        <a href="mailto:info@ispy4u.us">info@ispy4u.us</a>
       </div>
     </div>
   </section>
@@ -620,9 +620,13 @@
       </div>
 
       <div>
-      <form class="request" action="mailto:orders@ispy4u.us" method="get" onsubmit="return sendRequest(this)">
+      <form class="request" action="https://formsubmit.co/info@ispy4u.us" method="POST">
+        <input type="hidden" name="_subject" value="New service request from ispy4u.us">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <h3>Request Service</h3>
-        <p class="note">This opens a pre-filled email in your mail app — nothing is sent until you hit send. Service fees are payable in advance.</p>
+        <p class="note">Send the details and we'll get back to you promptly. Service fees are payable in advance.</p>
         <div class="two">
           <div class="field">
             <label for="f-name">Your name</label>
@@ -634,10 +638,14 @@
           </div>
         </div>
         <div class="field">
+          <label for="f-email">Email <span style="text-transform:none;letter-spacing:0">(optional, for replies)</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="field">
           <label for="f-details">How can we help?</label>
           <textarea id="f-details" name="details" placeholder="Tell us what you need served, retrieved, or notarized..."></textarea>
         </div>
-        <button class="btn btn-gold" type="submit">Open Email &amp; Send Request</button>
+        <button class="btn btn-gold" type="submit">Send Request</button>
       </form>
       <div class="map">
         <iframe
@@ -680,19 +688,6 @@
   </div>
 </footer>
 
-<script>
-function sendRequest(f){
-  var body =
-    "Name: " + f.name.value + "\n" +
-    "Phone: " + f.phone.value + "\n\n" +
-    f.details.value;
-  var url = "mailto:orders@ispy4u.us"
-    + "?subject=" + encodeURIComponent("Service request from " + f.name.value)
-    + "&body=" + encodeURIComponent(body);
-  window.location.href = url;
-  return false;
-}
-</script>
 
 </body>
 </html>
