@@ -709,11 +709,15 @@
 
 <script>
 (function(){
-  var done = '<h3>Request sent!</h3><p class="note">Thank you, your request is on its way. We will get back to you promptly with a quote and timeline.</p>';
+  var done = '<h3>Request sent!</h3><p class="note">Thank you, your request has been received.<br>Need something served urgently? Call or text <a href="tel:+14049010700">(404) 901-0700</a>.</p>';
   var f = document.querySelector('form.request');
   if (!f) return;
   f.addEventListener('submit', function(e){
     e.preventDefault();
+    var subj = f.querySelector('input[name="_subject"]');
+    if (subj && f.name.value) {
+      subj.value = 'Service request from ' + f.name.value + (f.phone.value ? ' (' + f.phone.value + ')' : '');
+    }
     var btn = f.querySelector('button[type="submit"]');
     var orig = btn.textContent;
     btn.disabled = true; btn.textContent = 'Sending...';
