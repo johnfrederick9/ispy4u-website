@@ -641,6 +641,7 @@
         <input type="hidden" name="_subject" value="New service request from ispy4u.us">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://ispy4u.us/?sent=1#contact">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <h3>Request Service</h3>
         <p class="note">Send the details and we'll get back to you promptly. Service fees are payable in advance.</p>
@@ -706,5 +707,32 @@
 </footer>
 
 
+<script>
+(function(){
+  var done = '<h3>Request sent!</h3><p class="note">Thank you, your request is on its way. We'll get back to you promptly with a quote and timeline.</p>';
+  var f = document.querySelector('form.request');
+  if (!f) return;
+  if (new URLSearchParams(location.search).get('sent') === '1') { f.innerHTML = done; return; }
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = f.querySelector('button[type="submit"]');
+    var orig = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending...';
+    fetch('https://formsubmit.co/ajax/info@ispy4u.us', {
+      method: 'POST',
+      body: new FormData(f),
+      headers: {'Accept': 'application/json'}
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad status');
+      return r.json();
+    }).then(function(){
+      f.innerHTML = done;
+    }).catch(function(){
+      btn.disabled = false; btn.textContent = orig;
+      f.submit();
+    });
+  });
+})();
+</script>
 </body>
 </html>
