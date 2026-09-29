@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ispy4u.us/sitemap.xml
