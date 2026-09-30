@@ -377,6 +377,60 @@
   .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   form.request .btn{border:none;cursor:pointer;font-family:var(--sans);font-size:1.02rem;justify-self:start}
 
+  /* client portal */
+  .portal{
+    background:linear-gradient(180deg, #faf5e9, #f5eedb);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .portal .wrap{max-width:640px;text-align:center}
+  .portal .sec-head{margin:0 auto}
+  .portal .eyebrow{justify-content:center}
+  .portal .cta-row{justify-content:center}
+  .portal-card{
+    background:var(--paper-card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    box-shadow:0 18px 44px rgba(25,24,120,.12);
+    overflow:hidden;
+    font-family:var(--sans);
+  }
+  .portal-card .bar{
+    display:flex;align-items:center;gap:12px;
+    background:var(--navy);color:#dde3f4;
+    border-bottom:3px solid #2ecc71;
+    padding:11px 18px;font-size:.85rem;letter-spacing:.03em;
+  }
+  .portal-card .bar img{
+    width:22px;height:22px;border-radius:5px;flex:none;display:block;
+  }
+  .portal-row{
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+    padding:14px 18px;border-bottom:1px dotted var(--line-navy);
+    font-size:.92rem;
+  }
+  .portal-row:last-child{border-bottom:none}
+  .portal-row .doc{font-family:var(--type);font-size:.8rem;color:var(--ink)}
+  .chip{
+    font-family:var(--type);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+    padding:4px 10px;border-radius:99px;white-space:nowrap;
+  }
+  .chip.done{background:rgba(46,204,113,.12);color:#1e8e4e;border:1px solid rgba(46,204,113,.45)}
+  .chip.progress{background:rgba(196,149,57,.12);color:var(--gold-deep);border:1px solid rgba(196,149,57,.4)}
+  .portal .cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:26px}
+  .portal .cta-row .hint{font-size:.9rem;color:var(--body)}
+
+  .rs-brand{
+    display:flex;flex-direction:column;align-items:center;gap:18px;
+    justify-self:center;
+  }
+  .rs-brand img{
+    width:min(240px, 55vw);height:auto;
+  }
+  .rs-brand span{
+    font-family:var(--type);font-size:.78rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold-deep);
+  }
+
   /* academy strip */
   .academy{
     background:linear-gradient(180deg, #faf5e9, #f5eedb);
@@ -414,7 +468,7 @@
     .hero .wrap{grid-template-columns:1fr;padding-top:60px;padding-bottom:70px}
     .affidavit{justify-self:center;transform:rotate(0deg)}
     .svc-grid{grid-template-columns:1fr 1fr}
-    .coverage .wrap,.contact .wrap{grid-template-columns:1fr;gap:44px}
+    .coverage .wrap,.contact .wrap,.portal .wrap{grid-template-columns:1fr;gap:44px}
     .about .facts{grid-template-columns:1fr;gap:28px}
     footer.site .wrap{grid-template-columns:1fr;gap:32px}
     nav.main a:not(.btn){display:none}
@@ -445,6 +499,7 @@
     </a>
     <nav class="main" aria-label="Main">
       <a href="#services">Services</a>
+      <a href="#portal">Client Portal</a>
       <a href="#coverage">Coverage</a>
       <a href="#about">About</a>
       <a class="btn btn-gold" href="#contact">Request Service</a>
@@ -573,7 +628,7 @@
     </div>
   </section>
 
-  <section class="coverage" id="coverage">
+   <section class="coverage" id="coverage">
     <div class="wrap">
       <div class="sec-head" style="margin-bottom:0">
         <p class="eyebrow">Jurisdiction: State of Georgia</p>
@@ -602,6 +657,22 @@
         <li>Spalding</li>
         <li>Upson</li>
       </ul>
+    </div>
+  </section>
+
+  <section class="portal" id="portal">
+    <div class="wrap">
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <p class="eyebrow">For our clients: the portal</p>
+          <h2>Submit and track your serves online</h2>
+          <p>iSPY4U runs on RocketServe, a dedicated portal for our clients. Submit new jobs through the online order form, follow every service attempt as it happens, and download your affidavits the moment they are ready. No phone tag, no waiting for updates.</p>
+          <div class="cta-row">
+            <a class="btn btn-gold" href="https://rocketserve.app/orderform/index.html?customerid=ISPY" target="_blank" rel="noopener">Submit a Job Online</a>
+          </div>
+          <p class="hint" style="margin-top:14px;font-size:.9rem">New client? <a href="#contact">Request service here</a> and we will set up your access.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -704,6 +775,7 @@
           <textarea id="f-details" name="details" placeholder="Tell us what you need served, retrieved, or notarized..."></textarea>
         </div>
         <button class="btn btn-gold" type="submit">Send Request</button>
+        <p class="note" style="margin-top:2px">Ready to send a job now? <a href="https://rocketserve.app/orderform/index.html?customerid=ISPY" target="_blank" rel="noopener" style="font-weight:700">Submit it through our online order form</a>.</p>
       </form>
       <div class="map">
         <iframe
